@@ -1,0 +1,17 @@
+schema: 1
+id: powerbi-ae
+name: powerbi-ae
+category: learning
+status: active
+summary: >-
+  A Power BI report on Public Health Scotland's monthly A&E waiting times,
+  built by hand to learn Power Query, a star schema and DAX, step by step
+  against a dated spec.
+stack: [Power BI, Power Query M, DAX]
+decisions:
+- date: '2026-10-14'
+  change: created -> active
+  reason: >-
+    Set up by the cv repository's session on the owner's go of 2026-10-14
+    to close the Power BI gap. Active, like kaggle, so the current step
+    sits on the estate's board as his next action.

@@ -1,0 +1,4 @@
+# Power BI project files that are per-machine; the spec's first step
+# checks these against Microsoft's guidance.
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
