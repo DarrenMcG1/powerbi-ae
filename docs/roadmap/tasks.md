@@ -3,11 +3,11 @@
 Unchecked items only; tick them as they are done. The detail of each
 step, and the rules, are in `docs/spec.md`; this is the list.
 
-## The report, 2026-11-02 to 2026-11-18
+## The report, 2026-10-19 to 2026-11-04
 
-- [ ] Week 1, by 2026-11-04: the Windows VM, Power Query, the model
-- [ ] Week 2, by 2026-11-11: measures, `CALCULATE`, time intelligence
-- [ ] Week 3, by 2026-11-18: the two pages, the PDF, the write-up, told aloud
+- [ ] Week 1, by 2026-10-21: the Windows VM, Power Query, the model
+- [ ] Week 2, by 2026-10-28: measures, `CALCULATE`, time intelligence
+- [ ] Week 3, by 2026-11-04: the two pages, the PDF, the write-up, told aloud
 
 ## After it
 
@@ -15,4 +15,4 @@ step, and the rules, are in `docs/spec.md`; this is the list.
       decide what the BI CV's skills line and self-directed section may
       claim from it.
 - [ ] Owner, before the evaluation ends (90 days from installing, about
-      early February 2027): keep the VM, or delete it and its 64 GB disk.
+      mid-January 2027 if installed on 2026-10-19): keep the VM, or delete it and its 64 GB disk.

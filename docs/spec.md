@@ -1,9 +1,11 @@
-# Spec: a Power BI report on Scotland's A&E waits, November 2026
+# Spec: a Power BI report on Scotland's A&E waits, October to November 2026
 
 The source of truth for what is due and when. Each step below is also a
 block on Alfred's planner, in the Learning area, Monday to Wednesday
-13:00 to 15:00 UTC (13:00 London time once the clocks go back on
-2026-10-25). Change a date here and the block with it.
+afternoons: in week 1 from 13:15 London time on the Monday and 13:45 on
+the Tuesday and Wednesday (12:15 and 12:45 UTC), after the RoS practice
+and lunch; from 2026-10-26, once the clocks have gone back, 13:00 to
+15:00. Change a date here and the block with it.
 
 ## Why
 
@@ -19,7 +21,10 @@ meet "three years of Power BI", and is not meant to.
 Costed and agreed 2026-10-14 (`~/projects/web/cv`,
 `docs/notes/strategy.md`, "The Power BI gap, costed 2026-10-14"): about
 18 hours, three afternoons a week from 2026-11-02, finishing Wednesday
-2026-11-18. Kaggle's November episode keeps Thursday to Sunday.
+2026-11-18. Brought forward by the owner on 2026-10-18 to start the next
+day: the same nine steps from Monday 2026-10-19, finishing Wednesday
+2026-11-04. Kaggle's November episode starts Sunday 2026-11-01, so week
+3 shares its Monday to Wednesday with Kaggle's short first steps.
 
 ## The rules
 
@@ -58,11 +63,11 @@ step moves to the next free one and the order stays.
 search the error or the function's name on <https://dax.guide/> or
 Microsoft Learn; then ask an assistant to *explain the concept* (rule
 1). Then write down where you are stuck in `notes.md`, commit it and use
-the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
+the next catch-up hour (Tuesday 27 October or Tuesday 3 November) for it.
 
 ## Week 1: the environment, the data and the model
 
-- [ ] **Mon 2 Nov: the Windows VM** (~2 h)
+- [ ] **Mon 19 Oct: the Windows VM** (~2 h)
   - Why a VM: Power BI Desktop runs only on Windows; Wine does not run
     it, and the browser version refuses a personal Gmail account. This
     machine has KVM (`/dev/kvm` exists, 32 threads, 186 GB of memory)
@@ -106,7 +111,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
     committed and pushed from the VM, and `git pull` on the host shows
     it. Add the two lines that page tells you to put in `.gitignore`
     (the local settings and the cache file) in the same commit.
-- [ ] **Tue 3 Nov: Power Query** (~2 h)
+- [ ] **Tue 20 Oct: Power Query** (~2 h)
   - Read: <https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query>,
     the tutorial
     <https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-shape-and-combine-data>,
@@ -148,7 +153,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
     from the Advanced Editor, and the fact query's row count matches
     the CSV's rows for the category you kept (count those in
     LibreOffice on the host), noted in `notes.md`.
-- [ ] **Wed 4 Nov: the model** (~2 h)
+- [ ] **Wed 21 Oct: the model** (~2 h)
   - Read: <https://learn.microsoft.com/en-us/power-bi/guidance/star-schema>,
     <https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand>,
     <https://learn.microsoft.com/en-us/power-bi/guidance/model-date-tables>
@@ -170,7 +175,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
 
 ## Week 2: DAX
 
-- [ ] **Mon 9 Nov: measures and row context** (~2 h)
+- [ ] **Mon 26 Oct: measures and row context** (~2 h)
   - Read: <https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics>,
     <https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-calculated-columns>,
     SQLBI's
@@ -187,7 +192,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
   - Done when: the 4-hour share for one site and month matches that
     row's `PercentageWithin4HoursAll`, and Scotland's for August 2026
     matches your sum in LibreOffice.
-- [ ] **Tue 10 Nov: CALCULATE and share of total** (~1 h, then an hour
+- [ ] **Tue 27 Oct: CALCULATE and share of total** (~1 h, then an hour
   to catch up)
   - Read: <https://dax.guide/calculate/>,
     <https://dax.guide/removefilters/>, and SQLBI's
@@ -203,7 +208,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
        in a calculated column would not?
   - Done when: each measure checked (rule 2). The second hour: whatever
     is stuck, or <https://dax.guide/> on each function you used.
-- [ ] **Wed 11 Nov: time intelligence** (~2 h)
+- [ ] **Wed 28 Oct: time intelligence** (~2 h)
   - Read: <https://learn.microsoft.com/en-us/dax/time-intelligence-functions-dax>,
     <https://dax.guide/sameperiodlastyear/>,
     <https://dax.guide/datesinperiod/> and <https://dax.guide/datesytd/>.
@@ -219,7 +224,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
 
 ## Week 3: the report and telling it
 
-- [ ] **Mon 16 Nov: the overview page** (~2 h)
+- [ ] **Mon 2 Nov: the overview page** (~2 h)
   - Read: <https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-tips-and-tricks-for-creating-reports>
     and <https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-slicers>.
   - How: write the page's one question at its top first (for example:
@@ -229,7 +234,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
     measure you checked.
   - Done when: someone who has not seen it can answer the page's
     question from it in a minute.
-- [ ] **Tue 17 Nov: the site page and the PDF** (~1 h, then an hour to
+- [ ] **Tue 3 Nov: the site page and the PDF** (~1 h, then an hour to
   catch up)
   - Read: <https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-drillthrough>
     and <https://learn.microsoft.com/en-us/power-bi/collaborate-share/end-user-pdf>
@@ -239,7 +244,7 @@ the next catch-up hour (Tuesday 10 or Tuesday 17) for it.
     `report/ae.pdf`.
   - Done when: right-clicking a site drills through to it, and the PDF
     is committed. The second hour: whatever is stuck.
-- [ ] **Wed 18 Nov: the write-up and saying it aloud** (~2 h)
+- [ ] **Wed 4 Nov: the write-up and saying it aloud** (~2 h)
   - How: in `README.md`, in your own words: the question, the data and
     its credit, a screenshot of the model, each measure and what it
     answers, how you checked them, and what went wrong. Save a `.pbix`

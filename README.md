@@ -6,7 +6,7 @@ product: every measure is the owner's own, written without coding
 agents, so that it survives an interview walkthrough.
 
 - **What is due and when:** [`docs/spec.md`](docs/spec.md), three
-  afternoons a week from 2026-11-02 to 2026-11-18.
+  afternoons a week from 2026-10-19 to 2026-11-04.
 - **The report:** `report/`, saved as a Power BI project so its M and
   DAX are text in git, with a PDF export.
 
