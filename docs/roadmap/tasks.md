@@ -16,6 +16,13 @@ step, and the rules, are in `docs/spec.md`; this is the list.
       `docker.service`); see `SNAG-PBI-001`.
 - [ ] Owner: delete the leftover `win11-clone` in virt-manager.
 
+## Alfred
+
+- [ ] Session: when Alfred answers estate message
+      `38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7` (asks for a `powerbi-ae`
+      token surface; reply to `dc1c81f8-9766-46bf-a36e-82d8eb668dcd`),
+      record how to mint it in `CLAUDE.md`, "Alfred's planner tokens".
+
 ## After it
 
 - [ ] Session in `~/projects/web/cv`, once the report is told aloud:

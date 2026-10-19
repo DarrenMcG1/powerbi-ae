@@ -31,6 +31,15 @@ Power BI Desktop runs in a Windows 11 evaluation VM on KVM, because it
 is Windows-only and this machine runs Arch. The owner commits from the
 VM; pull on the host before editing.
 
+## Alfred's planner tokens
+
+A session here never borrows another consumer's `POST /auth/session`
+surface (`cv`, `claude`, `web`): the token's label and, for `cv`, the
+blocks it writes name the wrong writer. This repository asked Alfred
+for a `powerbi-ae` surface (estate message
+`38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7`); until it exists, mint nothing
+and leave the planner dates unchecked.
+
 ## Where this came from
 
 Costed in `~/projects/web/cv`, `docs/notes/strategy.md`, "The Power BI
