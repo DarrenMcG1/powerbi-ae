@@ -1,18 +1,20 @@
-# Handoff — 2026-10-18
+# Handoff — 2026-10-19
 
 ## Next action
 
-Step 1 of `docs/spec.md`, the Windows VM, Monday 2026-10-19 13:15 on the planner; start the 6 GB ISO download first. *(For: owner, ~2 h)*
+In the VM, turn on the .pbip preview option, save the report as report/ae.pbip, git rm report/ae.pbix, then commit and push. *(For: owner, ~10 min)*
 
-The detail is `docs/spec.md`: a step per afternoon, Monday to Wednesday from 2026-10-19 to 2026-11-04, each with what to read and when it is done, ticked in that file as you go. Each step is also a block on Alfred's planner in the Learning area. The M and DAX here are the owner's own; a session does not write them (`CLAUDE.md`).
+## Session 2026-10-19: the VM, up to the first push
 
-## Session 2026-10-18: brought forward to start tomorrow
+Step 1 of `docs/spec.md` is not ticked: its "Done when" needs `report/ae.pbip` pulled on the host, and the VM's first push (`1b12980`, "empty report") is a 17 KB `report/ae.pbix` only, so no TMDL text yet. The `.gitignore` already carried the two per-machine lines, so nothing to add there.
 
-The owner asked to start on 2026-10-19 rather than 2026-11-02. The planner already held the new dates when the session read it: nine Power BI blocks created 18:34 UTC that day, Mon to Wed, 19 Oct to 4 Nov, by whoever planned the week, not this session. The spec, `README.md`, `STATUS.md` and `tasks.md` now match those blocks; no block was written or moved. Week 1's blocks sit later than 13:00 (12:15 UTC Monday, 12:45 Tuesday and Wednesday), after the RoS practice and lunch, and the spec says so. The catch-up hours are now Tuesday 27 October and Tuesday 3 November. Kaggle's November episode now starts Sunday 1 November with short Monday to Wednesday steps, so the spec's old "Kaggle keeps Thursday to Sunday" was replaced; whether both fit on 2 to 4 November is for the planner, which showed only the Power BI block those days. The cv repository's handoff still says 2 to 18 November; it was told by estate message rather than edited.
+What is working: the Windows 11 Enterprise evaluation VM (`win11` in libvirt, 8 CPUs, 16 GB, 64 GB qcow2, no GPU), Power BI Desktop and Git for Windows installed, the repository public at `DarrenMcG1/powerbi-ae` and cloned in the VM, the VM online.
 
-## Where the repository stands
+Problems met, which git does not show:
 
-Set up 2026-10-14 by the cv repository's session: the spec and the convention documents, no data and no report yet. No GitHub remote: the first step creates it, public, with `gh repo create`.
+- **Secure boot.** virt-manager's "Customize" step gave the VM the plain `OVMF_CODE.4m.fd` firmware, and Arch's `OVMF_VARS.4m.fd` has no Microsoft keys, so Windows setup said secure boot was off. Fixed in the libvirt definition, not by recreating the VM: the loader is `OVMF_CODE.secboot.4m.fd` with `secure='yes'` and `<smm state='on'/>`, and the variable store is `~/vm/OVMF_VARS.4m.msft.fd`, built with `virt-fw-vars --enroll-redhat --secure-boot` (package `virt-firmware`). Auto-selection (`firmware='efi'`) is off because no Arch firmware descriptor advertises enrolled keys. Rejected: recreating the VM; the original XML is only in that session's scratchpad.
+- **No network.** The VM got a DHCP lease, but Docker's `forward` chain has `policy drop`, which blocked libvirt's NAT replies. Fixed by hand with two rules in `DOCKER-USER` (accept from `virbr0`; accept established replies to it). They are **lost on reboot** (snag below, task added). Also started and autostarted libvirt's `default` network.
+- `win11-clone` is a leftover with the old broken firmware; the owner deletes it in virt-manager, or says so.
 
 ## Decisions taken
 

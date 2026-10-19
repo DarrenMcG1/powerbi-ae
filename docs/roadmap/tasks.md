@@ -9,6 +9,13 @@ step, and the rules, are in `docs/spec.md`; this is the list.
 - [ ] Week 2, by 2026-10-28: measures, `CALCULATE`, time intelligence
 - [ ] Week 3, by 2026-11-04: the two pages, the PDF, the write-up, told aloud
 
+## Host
+
+- [ ] Owner: make the VM's network survive a reboot (a systemd unit that
+      re-adds the two `DOCKER-USER` rules for `virbr0` after
+      `docker.service`); see `SNAG-PBI-001`.
+- [ ] Owner: delete the leftover `win11-clone` in virt-manager.
+
 ## After it
 
 - [ ] Session in `~/projects/web/cv`, once the report is told aloud:
