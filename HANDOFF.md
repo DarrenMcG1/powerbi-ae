@@ -1,4 +1,4 @@
-# Handoff — 2026-10-19
+# Handoff — 2026-10-20
 
 ## Next action
 
@@ -28,3 +28,7 @@ Problems met, which git does not show:
 ## Not done
 
 The Learning area on Alfred's planner lists the repositories it covers (kaggle, Athenaeum, InvestingAssistant); this one is not added, since an area's settings are the owner's.
+
+## Session 2026-10-20: Alfred's token surface
+
+Alfred closed our request `38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7` with a note and filed `ce1f83ff-6a9e-41ee-88e8-944ed27d7d81`: the `powerbi-ae` surface is live (ADR-0176). `CLAUDE.md`, "Alfred's planner tokens", now carries the mint and revoke commands and the read-only convention. No token was minted: nothing this session needed the planner. The earlier message `8a043b98-4d99-443a-9eb6-df348d0f9be0` ("mint none until built") was met by the build and closed as superseded. Whether a session may change a block it did not create is open on Alfred's side (their row 387); until it is ruled, a session here changes none.

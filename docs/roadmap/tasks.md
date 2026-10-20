@@ -18,10 +18,11 @@ step, and the rules, are in `docs/spec.md`; this is the list.
 
 ## Alfred
 
-- [ ] Session: when Alfred answers estate message
-      `38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7` (asks for a `powerbi-ae`
-      token surface; reply to `dc1c81f8-9766-46bf-a36e-82d8eb668dcd`),
-      record how to mint it in `CLAUDE.md`, "Alfred's planner tokens".
+- [x] Session: record how to mint the `powerbi-ae` token in `CLAUDE.md`
+      (done 2026-10-20, from estate message `ce1f83ff-6a9e-41ee-88e8-944ed27d7d81`).
+- [ ] Owner: add this repository to the Learning area's list on Alfred's
+      planner, so the dates the token reads are the ones this repository's
+      blocks carry.
 
 ## After it
 

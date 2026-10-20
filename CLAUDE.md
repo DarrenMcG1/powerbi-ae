@@ -35,10 +35,21 @@ VM; pull on the host before editing.
 
 A session here never borrows another consumer's `POST /auth/session`
 surface (`cv`, `claude`, `web`): the token's label and, for `cv`, the
-blocks it writes name the wrong writer. This repository asked Alfred
-for a `powerbi-ae` surface (estate message
-`38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7`); until it exists, mint nothing
-and leave the planner dates unchecked.
+blocks it writes name the wrong writer. Alfred built a `powerbi-ae`
+surface (ADR-0176; estate message `ce1f83ff-6a9e-41ee-88e8-944ed27d7d81`),
+so a session that needs the planner mints its own, only when it must
+read the Learning blocks to check `docs/spec.md` dates:
+
+    curl -s -X POST http://127.0.0.1:8100/auth/session \
+      -H 'Content-Type: application/json' -d '{"surface":"powerbi-ae"}'
+
+The reply is `{id, token}`; send the token as `Authorization: Bearer
+<token>`. Revoke it when the session ends:
+`curl -s -X DELETE http://127.0.0.1:8100/auth/device-tokens/<id> -H
+'Authorization: Bearer <token>'`. Use is read-only by convention, not by
+enforcement (every token can write every domain), so a session creates
+no blocks and changes none it did not create; the owner moves the
+dates, and a session then matches `docs/spec.md` to them.
 
 ## Where this came from
 
