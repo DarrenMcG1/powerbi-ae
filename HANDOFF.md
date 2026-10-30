@@ -1,4 +1,4 @@
-# Handoff — 2026-10-20
+# Handoff — 2026-10-30
 
 ## Next action
 
@@ -18,6 +18,8 @@ Problems met, which git does not show:
 
 ## Decisions taken
 
+- **1.0 is the nine spec steps; the tooling is frozen; v2 review 2026-11-18**, owner 2026-10-30, from estate-manager's message `9a03aeb1-bbb5-4951-8ae4-efbee8fa906b`. Recorded in `CLAUDE.md`, "1.0 and the freeze". Rejected: dropping the PDF from 1.0, and ending 1.0 at the overview page (that loses the told-aloud finish the cv session waits on). Rejected dates: 2026-12-02 and 2027-01-04 (project-manager's date), both long for a 15-hour build.
+
 - **Start 2026-10-19, finish 2026-11-04**, owner 2026-10-18. The steps, their order and their sizes are unchanged; only the dates moved.
 - **A new public repository**, owner 2026-10-14. Rejected: a folder in `~/projects/ml/kaggle`, whose Sunday check-in reads that repository's milestones; a private repository, since the point is a report he can show.
 - **Public Health Scotland's monthly A&E file**, owner 2026-10-14, with PHS's hospital and health board code lists as the dimensions. Rejected: the weekly file the costing first suggested, because weeks do not line up across years and year on year is one of the DAX steps.
@@ -32,3 +34,7 @@ The Learning area on Alfred's planner lists the repositories it covers (kaggle, 
 ## Session 2026-10-20: Alfred's token surface
 
 Alfred closed our request `38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7` with a note and filed `ce1f83ff-6a9e-41ee-88e8-944ed27d7d81`: the `powerbi-ae` surface is live (ADR-0176). `CLAUDE.md`, "Alfred's planner tokens", now carries the mint and revoke commands and the read-only convention. No token was minted: nothing this session needed the planner. The earlier message `8a043b98-4d99-443a-9eb6-df348d0f9be0` ("mint none until built") was met by the build and closed as superseded. Whether a session may change a block it did not create is open on Alfred's side (their row 387); until it is ruled, a session here changes none.
+
+## Session 2026-10-30: the 1.0 and the freeze
+
+Estate-manager asked every active repository to name a 1.0 and a freeze; the owner ruled (see Decisions taken), and the message was closed. Found while checking: only step 1 is done, with no `report/ae.pbip`, `data/` or `notes.md` on the host, so the 2026-11-04 finish cannot hold; a task asks the owner to move the planner blocks. The working tree carries the owner's uncommitted tick on step 1 in `docs/spec.md`, whose "Done when" (the `.pbip` pulled on the host) is not yet true; this session left it uncommitted.

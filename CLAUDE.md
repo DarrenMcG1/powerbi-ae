@@ -17,6 +17,20 @@ What a session may touch: the convention documents (`HANDOFF.md`,
 replaces it) and `docs/spec.md`, whose dates match the blocks on
 Alfred's planner.
 
+## 1.0 and the freeze
+
+Ruled by the owner 2026-10-30, from estate message
+`9a03aeb1-bbb5-4951-8ae4-efbee8fa906b` (every active repository names a
+1.0 and freezes after it). **1.0 is the nine steps of `docs/spec.md` as
+written, nothing added**, done when step 9's "Done when" is true: the
+report told aloud in three minutes, pushed. The freeze is on the
+tooling around the practice, not the practice: no scripts, routines,
+Alfred integrations or new convention documents. Only a bug fix or what
+an incident forces is built (the VM's network, `SNAG-PBI-001`, counts).
+A new idea is one line under "v2" in `docs/roadmap/ideas.md`. **On
+2026-11-18** the owner reads that list and opens v2 or extends the
+freeze.
+
 ## Shape
 
 - `docs/spec.md`: the steps, their dates and the rules. Each step is a
