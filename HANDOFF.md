@@ -38,3 +38,7 @@ Alfred closed our request `38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7` with a note and
 ## Session 2026-10-30: the 1.0 and the freeze
 
 Estate-manager asked every active repository to name a 1.0 and a freeze; the owner ruled (see Decisions taken), and the message was closed. Found while checking: only step 1 is done, with no `report/ae.pbip`, `data/` or `notes.md` on the host, so the 2026-11-04 finish cannot hold; a task asks the owner to move the planner blocks. The working tree carries the owner's uncommitted tick on step 1 in `docs/spec.md`, whose "Done when" (the `.pbip` pulled on the host) is not yet true; this session left it uncommitted.
+
+## Session 2026-10-30: a v2 line from learning-manager
+
+Estate message `110d2309-6956-4833-ad08-a6ef1b6734bf` from learning-manager carried the owner's ruling for one v2 line: Azure Data Factory or Fabric feeding the existing report. It is now the first line under "v2" in `docs/roadmap/ideas.md`, for the 2026-11-18 review to open or not; it is not a 1.0 step and leaves the freeze as it was. No task was added, since the 2026-11-18 review task already covers reading the list. The message was closed with a note naming the line. The owner's uncommitted tick on step 1 in `docs/spec.md` was again left alone.
