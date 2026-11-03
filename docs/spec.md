@@ -67,7 +67,7 @@ the next catch-up hour (Tuesday 27 October or Tuesday 3 November) for it.
 
 ## Week 1: the environment, the data and the model
 
-- [ ] **Mon 19 Oct: the Windows VM** (~2 h)
+- [x] **Mon 19 Oct: the Windows VM** (~2 h)
   - Why a VM: Power BI Desktop runs only on Windows; Wine does not run
     it, and the browser version refuses a personal Gmail account. This
     machine has KVM (`/dev/kvm` exists, 32 threads, 186 GB of memory)
