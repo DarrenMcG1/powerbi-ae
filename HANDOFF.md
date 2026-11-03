@@ -1,4 +1,4 @@
-# Handoff — 2026-10-30
+# Handoff — 2026-11-03
 
 ## Next action
 
@@ -42,3 +42,9 @@ Estate-manager asked every active repository to name a 1.0 and a freeze; the own
 ## Session 2026-10-30: a v2 line from learning-manager
 
 Estate message `110d2309-6956-4833-ad08-a6ef1b6734bf` from learning-manager carried the owner's ruling for one v2 line: Azure Data Factory or Fabric feeding the existing report. It is now the first line under "v2" in `docs/roadmap/ideas.md`, for the 2026-11-18 review to open or not; it is not a 1.0 step and leaves the freeze as it was. No task was added, since the 2026-11-18 review task already covers reading the list. The message was closed with a note naming the line. The owner's uncommitted tick on step 1 in `docs/spec.md` was again left alone.
+
+## Session 2026-11-03: how to query in Power Query, and the 45-minute blocks
+
+The owner asked how to query the three step 2 files once loaded. Answered in words only (`CLAUDE.md`, "The one rule"): a Power Query query is a saved chain of steps, not a `SELECT`; the questions in step 2 are answered with the column filter, column profiling over the whole data set, and Merge Queries' join kinds. No M written.
+
+Estate message `fe0ccb46-0795-4534-88e8-ab6cc9140e38` from learning-manager: from 2026-11-02 the Learning blocks are 45 minutes each weekday, and the nine steps end about 2026-12-01, after the 2026-11-18 v2 review. Logged in `docs/roadmap/tasks.md` (the move-blocks task ticked; a session task to match `docs/spec.md`; an owner task to rule on the review date) and closed. `docs/spec.md` was not edited: the owner's uncommitted tick on step 1 is still in it.
