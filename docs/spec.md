@@ -153,6 +153,42 @@ the next catch-up hour (Tuesday 27 October or Tuesday 3 November) for it.
     from the Advanced Editor, and the fact query's row count matches
     the CSV's rows for the category you kept (count those in
     LibreOffice on the host), noted in `notes.md`.
+  - Deeper dive, written 2026-11-03 after the first sitting on this
+    step. Where to look and what to ask; no code.
+    - A query here is the whole recipe for one table, not something you
+      run against it. Each button adds an applied step, which reads like
+      a chain of CTEs, each selecting from the one before. Home, then
+      Transform data, opens the editor: the queries on the left, a
+      preview in the middle, the applied steps on the right. View, then
+      Advanced Editor, shows the M those steps wrote.
+    - The preview and the column statistics cover the first 1,000 rows
+      unless you change it: at the bottom left, set column profiling to
+      the entire data set before you trust any count. View's Column
+      quality, Column distribution and Column profile are your
+      `SELECT DISTINCT` and `GROUP BY … COUNT(*)`.
+    - Question 1: the profile counts rows, not attendances. On
+      2026-11-03 it showed 40,227 rows: 19,022 `Unplanned`, about as
+      many `All`, and roughly 2,200 `New planned`, because a site with
+      no planned return visits has no row for them. To test "`All` is
+      the sum of the others", filter to one site and one month and
+      compare `NumberOfAttendancesAll` across its two or three rows; do
+      it again for a site with no `New planned` row. Then: what would a
+      sum over all three categories give? Remove the two filters
+      afterwards, since they are applied steps too.
+    - Question 2: `Month` is text such as `200707`. What is it missing
+      that a date needs, before you change its type?
+    - Question 3 is `NOT EXISTS` in SQL. Home, then Merge Queries, joins
+      two queries; read its Join Kind list for the one that keeps only
+      the rows with no match.
+    - Question 4: find the column in the board file that says when a
+      board stopped, and look at what its filter offers.
+    - Question 5: the merge in question 3 makes a fourth query, only for
+      checking. Right-click it: Enable load decides whether it reaches
+      the model.
+    - The row count for "Done when": after Close & Apply, the Table
+      view shows each table's rows at the bottom.
+    - Read: <https://learn.microsoft.com/en-us/power-query/merge-queries-overview>
+      and <https://learn.microsoft.com/en-us/power-query/data-profiling-tools>.
 - [ ] **Wed 21 Oct: the model** (~2 h)
   - Read: <https://learn.microsoft.com/en-us/power-bi/guidance/star-schema>,
     <https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand>,

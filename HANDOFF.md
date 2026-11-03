@@ -2,7 +2,7 @@
 
 ## Next action
 
-In the VM, turn on the .pbip preview option, save the report as report/ae.pbip, git rm report/ae.pbix, then commit and push. *(For: owner, ~10 min)*
+In the VM, resume step 2 at question 1: check one site and month's All against Unplanned plus New planned, then save as report/ae.pbip and push. *(For: owner, ~45 min)*
 
 ## Session 2026-10-19: the VM, up to the first push
 
@@ -48,3 +48,5 @@ Estate message `110d2309-6956-4833-ad08-a6ef1b6734bf` from learning-manager carr
 The owner asked how to query the three step 2 files once loaded. Answered in words only (`CLAUDE.md`, "The one rule"): a Power Query query is a saved chain of steps, not a `SELECT`; the questions in step 2 are answered with the column filter, column profiling over the whole data set, and Merge Queries' join kinds. No M written.
 
 Estate message `fe0ccb46-0795-4534-88e8-ab6cc9140e38` from learning-manager: from 2026-11-02 the Learning blocks are 45 minutes each weekday, and the nine steps end about 2026-12-01, after the 2026-11-18 v2 review. Logged in `docs/roadmap/tasks.md` (the move-blocks task ticked; a session task to match `docs/spec.md`; an owner task to rule on the review date) and closed. `docs/spec.md` was not edited: the owner's uncommitted tick on step 1 is still in it.
+
+Where the owner stopped, 2026-11-03: step 2, question 1. The three files are loaded in the VM. The column profile showed 40,227 rows, with `All` and `Unplanned` near 19,022 each and `New planned` near 2,200, so row counts do not add; whether attendances do (`All` = `Unplanned` + `New planned` for one site and month) is unchecked. The owner stepped back there and asked for the hints in writing: they are now "Deeper dive" under step 2 in `docs/spec.md`. Rejected: a new supplementary document, since `CLAUDE.md` limits a session to the spec and the convention documents, and the freeze bars new documents. If the check shows `All` is not the sum, the spec's column notes are wrong and a session corrects them. On the host, `report/` still holds only `ae.pbix`, so step 1's `.pbip` is not pushed yet.
