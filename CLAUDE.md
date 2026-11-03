@@ -17,6 +17,20 @@ What a session may touch: the convention documents (`HANDOFF.md`,
 replaces it) and `docs/spec.md`, whose dates match the blocks on
 Alfred's planner.
 
+## 1.0 and the freeze
+
+Ruled by the owner 2026-10-30, from estate message
+`9a03aeb1-bbb5-4951-8ae4-efbee8fa906b` (every active repository names a
+1.0 and freezes after it). **1.0 is the nine steps of `docs/spec.md` as
+written, nothing added**, done when step 9's "Done when" is true: the
+report told aloud in three minutes, pushed. The freeze is on the
+tooling around the practice, not the practice: no scripts, routines,
+Alfred integrations or new convention documents. Only a bug fix or what
+an incident forces is built (the VM's network, `SNAG-PBI-001`, counts).
+A new idea is one line under "v2" in `docs/roadmap/ideas.md`. **On
+2026-11-18** the owner reads that list and opens v2 or extends the
+freeze.
+
 ## Shape
 
 - `docs/spec.md`: the steps, their dates and the rules. Each step is a
@@ -30,6 +44,26 @@ Alfred's planner.
 Power BI Desktop runs in a Windows 11 evaluation VM on KVM, because it
 is Windows-only and this machine runs Arch. The owner commits from the
 VM; pull on the host before editing.
+
+## Alfred's planner tokens
+
+A session here never borrows another consumer's `POST /auth/session`
+surface (`cv`, `claude`, `web`): the token's label and, for `cv`, the
+blocks it writes name the wrong writer. Alfred built a `powerbi-ae`
+surface (ADR-0176; estate message `ce1f83ff-6a9e-41ee-88e8-944ed27d7d81`),
+so a session that needs the planner mints its own, only when it must
+read the Learning blocks to check `docs/spec.md` dates:
+
+    curl -s -X POST http://127.0.0.1:8100/auth/session \
+      -H 'Content-Type: application/json' -d '{"surface":"powerbi-ae"}'
+
+The reply is `{id, token}`; send the token as `Authorization: Bearer
+<token>`. Revoke it when the session ends:
+`curl -s -X DELETE http://127.0.0.1:8100/auth/device-tokens/<id> -H
+'Authorization: Bearer <token>'`. Use is read-only by convention, not by
+enforcement (every token can write every domain), so a session creates
+no blocks and changes none it did not create; the owner moves the
+dates, and a session then matches `docs/spec.md` to them.
 
 ## Where this came from
 

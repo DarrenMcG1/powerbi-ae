@@ -1,20 +1,24 @@
-# Handoff — 2026-10-18
+# Handoff — 2026-10-30
 
 ## Next action
 
-Step 1 of `docs/spec.md`, the Windows VM, Monday 2026-10-19 13:15 on the planner; start the 6 GB ISO download first. *(For: owner, ~2 h)*
+In the VM, turn on the .pbip preview option, save the report as report/ae.pbip, git rm report/ae.pbix, then commit and push. *(For: owner, ~10 min)*
 
-The detail is `docs/spec.md`: a step per afternoon, Monday to Wednesday from 2026-10-19 to 2026-11-04, each with what to read and when it is done, ticked in that file as you go. Each step is also a block on Alfred's planner in the Learning area. The M and DAX here are the owner's own; a session does not write them (`CLAUDE.md`).
+## Session 2026-10-19: the VM, up to the first push
 
-## Session 2026-10-18: brought forward to start tomorrow
+Step 1 of `docs/spec.md` is not ticked: its "Done when" needs `report/ae.pbip` pulled on the host, and the VM's first push (`1b12980`, "empty report") is a 17 KB `report/ae.pbix` only, so no TMDL text yet. The `.gitignore` already carried the two per-machine lines, so nothing to add there.
 
-The owner asked to start on 2026-10-19 rather than 2026-11-02. The planner already held the new dates when the session read it: nine Power BI blocks created 18:34 UTC that day, Mon to Wed, 19 Oct to 4 Nov, by whoever planned the week, not this session. The spec, `README.md`, `STATUS.md` and `tasks.md` now match those blocks; no block was written or moved. Week 1's blocks sit later than 13:00 (12:15 UTC Monday, 12:45 Tuesday and Wednesday), after the RoS practice and lunch, and the spec says so. The catch-up hours are now Tuesday 27 October and Tuesday 3 November. Kaggle's November episode now starts Sunday 1 November with short Monday to Wednesday steps, so the spec's old "Kaggle keeps Thursday to Sunday" was replaced; whether both fit on 2 to 4 November is for the planner, which showed only the Power BI block those days. The cv repository's handoff still says 2 to 18 November; it was told by estate message rather than edited.
+What is working: the Windows 11 Enterprise evaluation VM (`win11` in libvirt, 8 CPUs, 16 GB, 64 GB qcow2, no GPU), Power BI Desktop and Git for Windows installed, the repository public at `DarrenMcG1/powerbi-ae` and cloned in the VM, the VM online.
 
-## Where the repository stands
+Problems met, which git does not show:
 
-Set up 2026-10-14 by the cv repository's session: the spec and the convention documents, no data and no report yet. No GitHub remote: the first step creates it, public, with `gh repo create`.
+- **Secure boot.** virt-manager's "Customize" step gave the VM the plain `OVMF_CODE.4m.fd` firmware, and Arch's `OVMF_VARS.4m.fd` has no Microsoft keys, so Windows setup said secure boot was off. Fixed in the libvirt definition, not by recreating the VM: the loader is `OVMF_CODE.secboot.4m.fd` with `secure='yes'` and `<smm state='on'/>`, and the variable store is `~/vm/OVMF_VARS.4m.msft.fd`, built with `virt-fw-vars --enroll-redhat --secure-boot` (package `virt-firmware`). Auto-selection (`firmware='efi'`) is off because no Arch firmware descriptor advertises enrolled keys. Rejected: recreating the VM; the original XML is only in that session's scratchpad.
+- **No network.** The VM got a DHCP lease, but Docker's `forward` chain has `policy drop`, which blocked libvirt's NAT replies. Fixed by hand with two rules in `DOCKER-USER` (accept from `virbr0`; accept established replies to it). They are **lost on reboot** (snag below, task added). Also started and autostarted libvirt's `default` network.
+- `win11-clone` is a leftover with the old broken firmware; the owner deletes it in virt-manager, or says so.
 
 ## Decisions taken
+
+- **1.0 is the nine spec steps; the tooling is frozen; v2 review 2026-11-18**, owner 2026-10-30, from estate-manager's message `9a03aeb1-bbb5-4951-8ae4-efbee8fa906b`. Recorded in `CLAUDE.md`, "1.0 and the freeze". Rejected: dropping the PDF from 1.0, and ending 1.0 at the overview page (that loses the told-aloud finish the cv session waits on). Rejected dates: 2026-12-02 and 2027-01-04 (project-manager's date), both long for a 15-hour build.
 
 - **Start 2026-10-19, finish 2026-11-04**, owner 2026-10-18. The steps, their order and their sizes are unchanged; only the dates moved.
 - **A new public repository**, owner 2026-10-14. Rejected: a folder in `~/projects/ml/kaggle`, whose Sunday check-in reads that repository's milestones; a private repository, since the point is a report he can show.
@@ -26,3 +30,15 @@ Set up 2026-10-14 by the cv repository's session: the spec and the convention do
 ## Not done
 
 The Learning area on Alfred's planner lists the repositories it covers (kaggle, Athenaeum, InvestingAssistant); this one is not added, since an area's settings are the owner's.
+
+## Session 2026-10-20: Alfred's token surface
+
+Alfred closed our request `38d6bafe-ab21-46f2-90b9-ac9e4bbde5a7` with a note and filed `ce1f83ff-6a9e-41ee-88e8-944ed27d7d81`: the `powerbi-ae` surface is live (ADR-0176). `CLAUDE.md`, "Alfred's planner tokens", now carries the mint and revoke commands and the read-only convention. No token was minted: nothing this session needed the planner. The earlier message `8a043b98-4d99-443a-9eb6-df348d0f9be0` ("mint none until built") was met by the build and closed as superseded. Whether a session may change a block it did not create is open on Alfred's side (their row 387); until it is ruled, a session here changes none.
+
+## Session 2026-10-30: the 1.0 and the freeze
+
+Estate-manager asked every active repository to name a 1.0 and a freeze; the owner ruled (see Decisions taken), and the message was closed. Found while checking: only step 1 is done, with no `report/ae.pbip`, `data/` or `notes.md` on the host, so the 2026-11-04 finish cannot hold; a task asks the owner to move the planner blocks. The working tree carries the owner's uncommitted tick on step 1 in `docs/spec.md`, whose "Done when" (the `.pbip` pulled on the host) is not yet true; this session left it uncommitted.
+
+## Session 2026-10-30: a v2 line from learning-manager
+
+Estate message `110d2309-6956-4833-ad08-a6ef1b6734bf` from learning-manager carried the owner's ruling for one v2 line: Azure Data Factory or Fabric feeding the existing report. It is now the first line under "v2" in `docs/roadmap/ideas.md`, for the 2026-11-18 review to open or not; it is not a 1.0 step and leaves the freeze as it was. No task was added, since the 2026-11-18 review task already covers reading the list. The message was closed with a note naming the line. The owner's uncommitted tick on step 1 in `docs/spec.md` was again left alone.
