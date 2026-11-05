@@ -1,4 +1,4 @@
-# Handoff — 2026-11-03
+# Handoff — 2026-11-05
 
 ## Next action
 
@@ -50,3 +50,11 @@ The owner asked how to query the three step 2 files once loaded. Answered in wor
 Estate message `fe0ccb46-0795-4534-88e8-ab6cc9140e38` from learning-manager: from 2026-11-02 the Learning blocks are 45 minutes each weekday, and the nine steps end about 2026-12-01, after the 2026-11-18 v2 review. Logged in `docs/roadmap/tasks.md` (the move-blocks task ticked; a session task to match `docs/spec.md`; an owner task to rule on the review date) and closed. `docs/spec.md` was not edited: the owner's uncommitted tick on step 1 is still in it.
 
 Where the owner stopped, 2026-11-03: step 2, question 1. The three files are loaded in the VM. The column profile showed 40,227 rows, with `All` and `Unplanned` near 19,022 each and `New planned` near 2,200, so row counts do not add; whether attendances do (`All` = `Unplanned` + `New planned` for one site and month) is unchecked. The owner stepped back there and asked for the hints in writing: they are now "Deeper dive" under step 2 in `docs/spec.md`. Rejected: a new supplementary document, since `CLAUDE.md` limits a session to the spec and the convention documents, and the freeze bars new documents. If the check shows `All` is not the sum, the spec's column notes are wrong and a session corrects them. On the host, `report/` still holds only `ae.pbix`, so step 1's `.pbip` is not pushed yet.
+
+## Session 2026-11-05: the freeze key in `.project.yaml`
+
+Estate-manager's message `387341ae-27ae-4039-81b8-0962c8a23355` announced the `freeze:` key (version, optional since, until) that the estate's board publishes; its reply `6f3a6634-6764-41b6-b842-e8445264519b` confirmed it safe to write. Both conditions were re-checked first: `sysadmin.service` started 2026-11-04 09:34:18 GMT, and estate-manager's board row carries a non-null `freeze`. The key is `version: '1.0'`, `until: 2026-11-18`, checked with the estate's `load_registry`, which parsed it. Both messages were closed.
+
+- `until` is the v2 review date the owner ruled on 2026-10-30, not estate-manager's 2027-01-04, which the owner rejected here. The open owner task about whether 2026-11-18 moves now also names this key.
+- `since` is left out. The message says to omit it while 1.0 is still being built, and step 2 of 9 is under way. That holds even though `CLAUDE.md` treats the tooling freeze as in force since 2026-10-30. A task adds `since` when step 9 is done.
+- `.project.yaml` is not in `CLAUDE.md`'s list of files a session may touch. It was edited because the owner's estate-wide ruling of 2026-11-04 asks for it. It is a key in an existing file, not a new document, so the freeze allows it.

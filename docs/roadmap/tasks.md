@@ -24,7 +24,11 @@ step, and the rules, are in `docs/spec.md`; this is the list.
       in `CLAUDE.md`, "1.0 and the freeze".
 - [ ] Owner: rule whether the 2026-11-18 v2 review moves, now that 1.0
       ends about 2026-12-01 (estate message
-      `fe0ccb46-0795-4534-88e8-ab6cc9140e38`).
+      `fe0ccb46-0795-4534-88e8-ab6cc9140e38`). A moved date is written in
+      `CLAUDE.md` and in `.project.yaml`'s `freeze.until`, which the
+      estate's board publishes.
+- [ ] Session, once step 9's "Done when" is true: add `since:` (that
+      day) under `freeze:` in `.project.yaml`.
 - [ ] Owner, 2026-11-18: read the v2 list in `docs/roadmap/ideas.md` and
       open v2 or extend the freeze.
 
