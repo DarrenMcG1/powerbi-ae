@@ -8,6 +8,9 @@ summary: >-
   built by hand to learn Power Query, a star schema and DAX, step by step
   against a dated spec.
 stack: [Power BI, Power Query M, DAX]
+freeze:
+  version: '1.0'
+  until: 2026-11-18
 decisions:
 - date: '2026-10-14'
   change: created -> active
